@@ -79,13 +79,13 @@ export default function Questionnaire() {
                 Հարցաթերթիկ
             </Text>
             <Text className="GHEAMariamReg containerText"
-                  style={{fontSize: 18, textAlign: 'center', maxWidth: 340}}>
+                  style={{fontSize: 18, textAlign: 'center', maxWidth: 320}}>
                 Խնդրում ենք նախապես տեղեկացնել Ձեր մասնակցության մասին մինչև
                 {" "}
                 <span style={{
                     fontWeight: 600,
                 }}>
-                    Մայիսի 20-ը
+                        Մարտի 25-ը
                     </span>
             </Text>
             <Flex vertical gap={16} align="center">
@@ -170,7 +170,7 @@ export default function Questionnaire() {
                         </Flex>
 
 
-                        <Flex vertical gap={6} style={{maxWidth: 350}}>
+                        <Flex vertical gap={6} style={{maxWidth: 300}}>
                             <Text className="GHEAMariamReg questionnaireText"
                                   style={{fontSize: 18}}>
                                 Անուն Ազգանուն
