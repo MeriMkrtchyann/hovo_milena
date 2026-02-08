@@ -97,7 +97,7 @@ export default function ImageTimer({setIsButtonClicked}: ImageTimerProps) {
             </Text>
 
             <Flex vertical align="center" gap={6}>
-                <Text className="GHEAMariamReg" style={{color: "white", fontSize: 20, color: 'black'}}>
+                <Text className="GHEAMariamReg" style={{ fontSize: 20, color: 'black'}}>
                     Հարսանիքին մնացել է
                 </Text>
 

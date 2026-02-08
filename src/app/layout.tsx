@@ -4,7 +4,7 @@ import type {Metadata} from 'next';
 import {AntdRegistry} from '@ant-design/nextjs-registry';
 
 export const metadata: Metadata = {
-    title: 'Edgar & Tatev',
+    title: 'Hovo & Milen',
     description: 'Հաստատեք Ձեր ներկայությունը մեր հարսանիքին',
     icons: {
         icon: '/wedding.png',
