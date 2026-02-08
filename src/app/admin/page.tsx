@@ -10,7 +10,7 @@ import {useRouter} from "next/navigation";
 
 const {Title} = Typography;
 
-const ADMIN_PASSWORD = 'passMeRiArThUr20word';
+const ADMIN_PASSWORD = 'HovoMilen13062026';
 
 interface RSVPData {
     id: string;
