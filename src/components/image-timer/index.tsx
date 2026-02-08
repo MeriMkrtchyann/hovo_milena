@@ -91,7 +91,7 @@ export default function ImageTimer({setIsButtonClicked}: ImageTimerProps) {
                       padding: 5,
                       color: "black",
                       fontSize: '4rem',
-                      paddingTop: "30px",
+                      paddingTop: "40px",
                   }}>
                 Հովո և Միլենա
             </Text>
