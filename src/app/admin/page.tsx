@@ -103,8 +103,7 @@ export default function AdminPage() {
                 items.map((item, index) => ({
                     '№': index + 1,
                     'Հիմնական հյուր': item.fullName,
-                    'Բոլոր հյուրերը': item.guestNames && item.guestNames.length > 0 ?
-                        item.guestNames.join(', ') : item.fullName,
+                    'Բոլոր հյուրերը': item.guestNames?.join(', ') || item.fullName,
                     'Կգա': item.willAttend ? 'Այո' : 'Ոչ',
                     'Հյուրերի քանակ': item.willAttend ? item.guestCount : 0,
                     'Լրացուցիչ տեղեկություն': item.additionalInfo || '-',
@@ -113,15 +112,15 @@ export default function AdminPage() {
                         'Անհայտ'
                 }));
 
+            const wb = XLSX.utils.book_new();
+
             const wsGroom = XLSX.utils.json_to_sheet(prepareExcelData(groomData));
-            const wbGroom = XLSX.utils.book_new();
-            XLSX.utils.book_append_sheet(wbGroom, wsGroom, 'Փեսայի հյուրեր');
-            XLSX.writeFile(wbGroom, `wedding-groom-${new Date().toISOString().split('T')[0]}.xlsx`);
+            XLSX.utils.book_append_sheet(wb, wsGroom, 'Փեսայի հյուրեր');
 
             const wsBride = XLSX.utils.json_to_sheet(prepareExcelData(brideData));
-            const wbBride = XLSX.utils.book_new();
-            XLSX.utils.book_append_sheet(wbBride, wsBride, 'Հարսի հյուրեր');
-            XLSX.writeFile(wbBride, `wedding-bride-${new Date().toISOString().split('T')[0]}.xlsx`);
+            XLSX.utils.book_append_sheet(wb, wsBride, 'Հարսի հյուրեր');
+
+            XLSX.writeFile(wb, `wedding-${new Date().toISOString().split('T')[0]}.xlsx`);
 
         } catch (error) {
             console.error('Էքսպորտի սխալ:', error);
@@ -130,6 +129,7 @@ export default function AdminPage() {
             setExporting(false);
         }
     };
+
 
     if (!isAuthenticated) {
         return (
